@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script type="text/html" id="tpl">
+    <!--{{each result as value i}}
+    <h1>{{retGBK1(value.name)}}</h1>
+    {{/each}}-->
+    <!--{{each objs as value i}}
+    <h1>{{value.name}}</h1>
+    {{/each}}-->
+     <!--<% for (var i = 0; i < objs.length; i ++) { %>
+         <% var obj =objs[i]; %>
+         <h1><%obj.name%></h1>
+     <%}%>-->
+</script>
+<script src="../lib/jquery/jquery.js"></script>
+<script>
+    // console.log(objs);
+</script>
+
+
+<script>
+    var objs = {name:"小强",age:20,sex:"不详"}
+    for(var key in objs){
+        document.write(objs[key]);
+    }
+</script>
+</html>

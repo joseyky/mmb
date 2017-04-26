@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/jquery/jquery.js"></script>
+    <style>
+    div{
+        width: 500px;
+        height: 500px;
+        background-color: gold;
+        padding: 20px;
+    }
+    p{
+        width: 250px;
+        height: 250px;
+        background-color: greenyellow;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!--<p  ></p>-->
+    </div>
+</body>
+<script>
+
+
+   
+
+    // document.querySelector("div").onclick=cli;
+//  $("div p").on("click",cli);
+     $("div").on("click","p",cli);
+// 加载p标签 
+
+    /*事件委托*/
+   
+
+
+   
+        // $("p").click(cli);
+         function cli(){
+        console.log("ok");
+    }
+</script>
+</html>

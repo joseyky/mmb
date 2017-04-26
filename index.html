@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--第三方的css-->
+  <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <!--自己的less样式-->
+  <link rel="stylesheet/less" href="./css/base.less">
+  <link rel="stylesheet/less" href="./css/index.less">
+  <!--less.js-->
+  <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+  <!--头部-->
+  <header id="header">
+    <a class="logo" href="#">
+      <img src="./images/header_logo.png" alt="">
+    </a>
+    <a class="app" href="">
+      <img src="./images/header_app.png" alt="">
+    </a>
+  </header>
+  <!--搜索框-->
+  <section id="search">
+    <form action="">
+      <input type="search" placeholder="请输入你想比价的商品">
+      <input type="submit" value="搜索">
+    </form>
+  </section>
+  <!--首页菜单-->
+  <section id="menu">
+    <!--<div class="row">-->
+    <!-- <div class="col-xs-3">
+        <a href="#">
+          <img src="./images/haitao.png" alt="">
+          <p>比价搜索</p>
+        </a>
+      </div>-->
+    <!--</div>-->
+  </section>
+  <!--超值折扣-->
+  <section id="recommen">
+    <div class="recommen-title">
+      <h5>超值折扣推荐</h5>
+      <img src="./images/header_app.png" alt="">
+    </div>
+    <div class="recommen-list">
+      <div class="media">
+        <a class="media-left" href="#">
+          <img src="http://cacheimg.manmanbuy.com/r_img/cacheimg.aspx?width=600&imgurl=http://a.manmanbuy.com:8013/cuxiaoPic/201610/201610001412282758.jpg"
+            alt="...">
+        </a>
+        <div class="media-body">
+          <a href="">
+            <h5>移动端移动端移动</h5>
+            <p class="price">10</p>
+            <span class="from">京东商城| 2017-01-18 16:13:39</span>
+            <span class="comment">
+              <i>
+
+              </i>
+              1
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="recommen-more">
+      <a href="#">更多优惠信息>></a>
+    </div>
+    <div class="recommen-title">
+      <h5>品牌排行</h5>
+      <img src="images/header_app.png" alt="">
+    </div>
+  </section>
+  <!--尾部-->
+  <!--尾部区域-->
+  <footer id="footer">
+    <div class="row">
+      <div class="col-xs-4">
+        <a href="">登录</a>
+      </div>
+      <div class="col-xs-4">
+        <a href="">注册</a>
+      </div>
+      <div class="col-xs-4">
+        <a href=""><img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">返回顶部</a>
+      </div>
+    </div>
+    <p><a href="">手机app下载 </a><a href="">慢慢买手机版 </a> -- 掌上比价平台</p>
+    <p>m.manmanbuy.com </p>
+  </footer>
+</body>
+<!--第三方js-->
+<!--首页菜单模版-->
+<script id="menuTpl" type="text/html">
+  <div class="row">
+    {{each result as value i }}
+    <div class="col-xs-3">
+      <a href="{{value.titlehref}}">
+        {{#value.img}}
+        <p>{{value.name}}</p>
+      </a>
+    </div>
+    {{/each}}
+  </div>
+</script>
+<!--超值折扣-->
+<script id="recommenTpl" type="text/html">
+  {{each result as value i}}
+  <div class="media">
+    <a class="media-left" href="#">
+     {{#value.productImgSm}}
+    </a>
+    <div class="media-body">
+      <a href="">
+        <h5>{{value.productName}}</h5>
+        <p class="price">10</p>
+        <span class="from">{{value.productFrom}} | {{value.productTime}}</span>
+        <span class="comment">
+              <i>
+              </i>
+              {{getNum(value.productComCount)}}
+            </span>
+      </a>
+    </div>
+  </div>
+  {{/each}}
+</script>
+<script src="./lib/jquery/jquery.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./js/template.js"></script>
+<!--自己的index.js-->
+<script src="./js/common.js"></script>
+<script src="./js/index.js"></script>
+
+</html>

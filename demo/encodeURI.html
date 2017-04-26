@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // location.href 默认 使用 encodeURI
+
+    // decodeURI  解码
+
+    console.log(location.href);
+    var href=location.href;
+    var ohref=decodeURI(href);// 中文
+    console.log(ohref);
+    // var encode=encodeURI(ohref);
+    // console.log(encode);// 
+</script>
+</body>
+</html>

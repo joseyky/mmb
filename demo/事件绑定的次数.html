@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../lib/jquery/jquery.js"></script>
+</head>
+
+<body>
+    <button>绑定点击事件</button>
+    <div>
+        绑定我吧
+    </div>
+    <script>
+        // document.querySelector("button").onclick=function(){
+        //     document.querySelector("div")
+        // }
+        var index = 0;
+        $("button").click(function () {
+            $("div").click(function () {
+                index++;
+                console.log(index);
+            });
+        })
+    </script>
+</body>
+
+</html>

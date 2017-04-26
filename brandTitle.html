@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>gsproduct</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--第三方的css-->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!--自己的less样式-->
+    <link rel="stylesheet/less" href="./css/base.less">
+    <link rel="stylesheet/less" href="./css/brandTitle.less">
+    <link rel="stylesheet/less" href="./css/waitting.less">
+    <!--less.js-->
+    <script src="./lib/less/less.js"></script>
+
+</head>
+
+<body>
+        <div class="loader1">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    <header id="header">
+        <a class="logo" href="#">
+            <img src="./images/header_logo.png" alt="">
+        </a>
+        <a class="app" href="">
+            <img src="./images/header_app.png" alt="">
+        </a>
+    </header>
+    <!--搜索框-->
+    <section id="search">
+        <form action="">
+            <input type="search" placeholder="请输入你想比价的商品">
+            <input type="submit" value="搜索">
+        </form>
+    </section>
+
+    <section id="brand-title">
+        <!--路径导航-->
+        <div class="product-title">
+            <ol class="breadcrumb">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">全部分类</a></li>
+                <li>品牌大全</li>
+            </ol>
+            <a class="btn btn-default" href="">筛选</a>
+        </div>
+        <!--页面标题-->
+        <div class="bigTitle">
+            <h4>热门品牌排行</h4>
+        </div>
+        <!--品牌列表-->
+        <div class="brand-List">
+
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="">登录</a>
+            </div>
+            <div class="col-xs-4">
+                <a href="">注册</a>
+            </div>
+            <div class="col-xs-4">
+                <a href=""><img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">返回顶部</a>
+            </div>
+        </div>
+        <p><a href="">手机app下载 </a><a href="">慢慢买手机版 </a> -- 掌上比价平台</p>
+        <p>m.manmanbuy.com </p>
+    </footer>
+</body>
+<!--第三方js-->
+<script type="text/html" id="proLstTpl">
+    {{each result as value i}}
+    <div class="list-title">
+        <a data-categoryid="{{value.categoryId}}" data-brandtitleid="{{value.brandTitleId}}" href="brand.html?brandtitleid={{value.brandTitleId}}">
+            <h5>{{value.brandTitle}}</h5>
+        </a>
+    </div>
+    {{/each}}
+</script>
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./js/template.js"></script>
+<!--自己的index.js-->
+<script src="./js/common.js"></script>
+<script src="./js/brandTitle.js"></script>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>gsproduct</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--第三方的css-->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!--自己的less样式-->
+    <link rel="stylesheet/less" href="./css/base.less">
+    <link rel="stylesheet/less" href="./css/gsproduct.less">
+    <!--less.js-->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+    <header id="header">
+        <h4>凑单品</h4>
+    </header>
+
+    <main class="gs-product">
+        <div class="list">
+            <div class="hd">
+                <div class="filter">
+                    <ul>
+
+                        <li class=""><a href="javascript:;">1元<i></i></a></li>
+                    </ul>
+                </div>
+                <div class="search"> <i class="icon-search"></i></div>
+                <!--各种下拉-->
+                <div class="popsort popbox" id="shop">
+                    <ul>
+
+                    </ul>
+                </div>
+                <div class="popcat popbox" id="area">
+                    <ul>
+                        <li class=""><a href="#" data-areaid="6">西北（宁夏、新疆等）</a></li>
+                    </ul>
+                </div>
+                <div class="popprice popbox" id="price">
+                    <ul>
+                        <li class="on"><a href="javascript:;">全部价格</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bd gs-product-list">
+                <ul class="masonry" id="container">
+
+                </ul>
+            </div>
+        </div>
+    </main>
+
+</body>
+<!--第三方js-->
+<script type="text/html" id="proLstTpl">
+    {{each result as value i}}
+    <li>
+        <a href="http://item.m.jd.com/ware/view.action?wareId=1274360" class="item border-img">
+            <div class="pic"><img src="{{value.productImg}}"></div>
+            <div class="title">{{value.productName}}</div>
+            <div class="other">
+                <div class="price">{{value.productImg}}</div>
+                <div class="btn">去凑单</div>
+                <div class="clearfix"></div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./js/template.js"></script>
+<!--自己的index.js-->
+<script src="./js/common.js"></script>
+<script src="./js/gsproduct.js"></script>
+
+</html>

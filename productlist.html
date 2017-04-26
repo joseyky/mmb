@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--第三方的css-->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!--自己的less样式-->
+    <link rel="stylesheet/less" href="./css/base.less">
+    <link rel="stylesheet/less" href="./css/productlist.less">
+    <!--less.js-->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+    <header id="header">
+        <a class="logo" href="#">
+            <img src="./images/header_logo.png" alt="">
+        </a>
+        <a class="app" href="">
+            <img src="./images/header_app.png" alt="">
+        </a>
+    </header>
+    <!--搜索框-->
+    <section id="search">
+        <form action="">
+            <input type="search" placeholder="请输入你想比价的商品">
+            <input type="submit" value="搜索">
+        </form>
+    </section>
+    <!--分类菜单-->
+    <section id="product">
+        <div class="product-title">
+            <ol class="breadcrumb">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">分类大全</a></li>
+                <li>电视机</li>
+            </ol>
+            <a class="btn btn-default" href="">筛选</a>
+        </div>
+        <div class="product-list">
+            <!--<div class="media">
+        <a class="media-left" href="#">
+         <img src="http://pro.zuyushop.com:8015/ProPic/20166/Thumb/Thumb_2016060015515937123.png" alt="乐视TV(Letv)S50 Air全配版2D 50英寸 全高清LED液晶电视" width="100" height="100">
+        </a>
+        <div class="media-body">
+            <a href="">
+                <h5>乐视TV(Letv)S50 Air全配版2D 50英寸 全高清LED液晶电视</h5>
+                <p class="price">1999</p>
+                <em>报价(6)</em><em>评论(2286)</em>
+            </a>
+        </div>
+    </div>-->
+        </div>
+        <div class="product-page clearfix">
+            <input type="button" value="上一页" class="btn btn-default pull-left pre">
+            <input type="button" value="下一页" class="btn btn-default pull-right nex">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    第1页
+    <span class="caret"></span>
+  </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!--尾部-->
+    <footer id="footer">
+    </footer>
+</body>
+<!--第三方js-->
+<script id="productListTpl" type="text/html">
+    {{each result as value i}}
+    <div class="media">
+        <a class="media-left" href="">
+          {{#value.productImg}}
+        </a>
+        <div class="media-body">
+            <a href="bijia.html?productId={{value.productId}}">
+                <h5>{{value.productName}}</h5>
+                <p class="price">{{value.productPrice}}</p>
+                <em>{{value.productQuote}}</em><em>{{value.productCom}}</em>
+            </a>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script src="./lib/jquery/jquery.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.js"></script>
+<script src="./js/template.js"></script>
+<!--自己的index.js-->
+<script src="./js/common.js"></script>
+<!--<script src="./js/productlist.js"></script>-->
+<script src="./js/productlist.js"></script>
+
+</html>
